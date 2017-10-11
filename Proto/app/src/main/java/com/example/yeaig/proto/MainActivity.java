@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.e("LOG", "now not push");
                             mSensorManager.unregisterListener(mGyroLis);
                             isPushed = 0;
+                            isFirst=1;
 
                         }
                     }
@@ -103,7 +104,9 @@ public class MainActivity extends AppCompatActivity {
 
             /* 각 축의 각속도 성분을 받는다. */
             if(isFirst==1) {
-                 gyroX_first = event.values[0];
+                Log.e("LOG", "if");
+
+                gyroX_first = event.values[0];
                  gyroY_first = event.values[1];
                  gyroZ_first = event.values[2];
 
@@ -114,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 isFirst=0;
             }
             else{
+                Log.e("LOG", "else");
                  gyroX_now = event.values[0];
                  gyroY_now = event.values[1];
                  gyroZ_now = event.values[2];
