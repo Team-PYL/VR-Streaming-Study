@@ -2,6 +2,9 @@
 - PSNR
 
 ○ 
-- 이미지에서의 압축의 원리 (fundamental)
+- 이미지에서의 압축의 원리 (fundamental) - 본질적인
 - 동영상에서의 압축의 원리 (fundamental)
 - 
+http://crynut84.tistory.com/55
+http://crynut84.tistory.com/58
+http://blog.naver.com/PostView.nhn?blogId=msnayana&logNo=80106586501

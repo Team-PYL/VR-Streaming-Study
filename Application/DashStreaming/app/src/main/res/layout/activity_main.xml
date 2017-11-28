@@ -31,6 +31,19 @@
             android:layout_height="wrap_content"
             android:text="get" />
 
+        <Button
+            android:text="pause or play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_pausePlay"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_show"
+            />
+
     </LinearLayout>
 
 </ScrollView>
