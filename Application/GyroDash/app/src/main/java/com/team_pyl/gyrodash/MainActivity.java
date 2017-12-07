@@ -25,6 +25,8 @@ import java.net.URL;
 import java.util.Date;
 import java.util.Locale;
 
+import com.team_pyl.gyrodash.NetworkServiceManager;
+
 public class MainActivity extends AppCompatActivity {
 
     /* Gyroscope */
@@ -39,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private int isPushed = 0;
     private int isFirst = 1;
 
-    String startJson = "[";
-    String endJson = "]";
+    String startJson = "{";
+    String endJson = "}";
     String gyro_data = "";
 
     //Roll and Pitch
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     public static double FILE_NAME;
 
 
+    NetworkServiceManager networkServiceManager = new NetworkServiceManager();
 
     /* Dash Streaming */
     /**
@@ -94,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
      * By default, the video will start playing as soon as it is loaded.
      */
     private boolean isPaused = false;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -226,7 +231,6 @@ public class MainActivity extends AppCompatActivity {
             public void onNewFrame() {
                 updateStatusText();
                 seekBar.setProgress((int) videoWidgetView.getCurrentPosition());
-
             }
 
             /**
@@ -240,11 +244,13 @@ public class MainActivity extends AppCompatActivity {
 
                 //여기서 데이터를 보낸다.
                 gyro_data = startJson+gyro_data+endJson;
-                Log.e(TAGGYRO,"LAST  "+gyro_data);
+                Log.d(TAGGYRO,"LAST  "+gyro_data);
 
                 try {
-                    getPosts(new JSONObject(gyro_data));//서버에 post하기 위한 함수 호출
+//                    JSONObject gyro_TS_dict = new JSONObject(gyro_data);
+//                    for (item : )
 
+                    networkServiceManager.sendData(new JSONObject(gyro_data));
                 }catch (Exception e){
                     Log.w(TAGGYRO, "getting POST function error", e);
                 }
@@ -303,12 +309,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (videoWidgetView.getDuration() <= 0) {
             try {
-                videoWidgetView.loadVideo(Uri.parse("http://techslides.com/demos/sample-videos/small.mp4"), new VrVideoView.Options());
+//                videoWidgetView.loadVideo(Uri.parse("http://techslides.com/demos/sample-videos/small.mp4"), new VrVideoView.Options());
+                videoWidgetView.loadVideoFromAsset("congo_2048.mp4", new VrVideoView.Options());
             } catch (IOException e) {
 
                 Log.w(TAG, "onResume - IOException");
             }
-//            videoWidgetView.loadVideoFromAsset("congo_2048.mp4", new VrVideoView.Options());
         }
         // Update the text to account for the paused video in onPause().
         updateStatusText();
@@ -321,7 +327,6 @@ public class MainActivity extends AppCompatActivity {
         videoWidgetView.shutdown();
         super.onDestroy();
         mSensorManager.unregisterListener(mGyroLis);
-
     }
 
     private class GyroscopeListener implements SensorEventListener {
@@ -371,25 +376,28 @@ public class MainActivity extends AppCompatActivity {
     class LogThread extends Thread {
         public void run() {
             try {
-                Thread.sleep(50);
+//                Thread.sleep(50);
                 // 안하면 조금 버벅대는감이 없잖아 있고, 어차피 사람이 움직이는 속도는 한정적이므로
                 // 어느정도의 sleep을 줘도 괜찮을것 같아서
                 String currentTime = new java.text.SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date(System.currentTimeMillis()));
 
+                double float_pitch = (pitch * RAD2DGR) - (firstPitch * RAD2DGR);
+                double float_roll = (roll * RAD2DGR) - (firstRoll * RAD2DGR);
+                double float_yaw = (yaw * RAD2DGR) - (firstYaw * RAD2DGR);
+
                 Log.w(TAGGYRO, "[TimeStamp]: "+videoWidgetView.getCurrentPosition()
                         + "           [Date]: " + currentTime
-                        + "           [Pitch]: " + String.format("%.1f", (pitch * RAD2DGR) - (firstPitch * RAD2DGR))
-                        + "           [Roll]: " + String.format("%.1f", (roll * RAD2DGR) - (firstRoll * RAD2DGR))
-                        + "           [Yaw]: " + String.format("%.1f", (yaw * RAD2DGR) - (firstYaw * RAD2DGR)));
-                if (!gyro_data.toString().equals("")) {
+                        + "           [Pitch]: " + String.format("%.1f", float_pitch)
+                        + "           [Roll]: " + String.format("%.1f", float_roll)
+                        + "           [Yaw]: " + String.format("%.1f", float_yaw));
+                if (!gyro_data.equals("")) {
                     gyro_data = gyro_data + ",";
                 }
-//                gyro_data = gyro_data + "{\"date\"" + ":" + "\"" + currentTime + "\"" + "," + "\"pitch\"" + ":" + "\"" + String.format("%.1f", (pitch * RAD2DGR) - (firstPitch * RAD2DGR)) + "\"" + "," + "\"roll\"" + ":" + "\"" + String.format("%.1f", (roll * RAD2DGR) - (firstRoll * RAD2DGR)) + "\"" + "," + "\"yaw\"" + ":" + "\"" + String.format("%.1f", (yaw * RAD2DGR) - (firstYaw * RAD2DGR)) + "\"" + "}";
-                gyro_data = gyro_data + "{\"TS\"" + ":" + "\"" + videoWidgetView.getCurrentPosition() + "\"" + "," + "\"date\"" + ":" + "\"" + currentTime + "\"" + "," + "\"pitch\"" + ":" + "\"" + String.format("%.1f", (pitch * RAD2DGR) - (firstPitch * RAD2DGR)) + "\"" + "," + "\"roll\"" + ":" + "\"" + String.format("%.1f", (roll * RAD2DGR) - (firstRoll * RAD2DGR)) + "\"" + "," + "\"yaw\"" + ":" + "\"" + String.format("%.1f", (yaw * RAD2DGR) - (firstYaw * RAD2DGR)) + "\"" + "}";
+//                gyro_data = gyro_data + "{\"TS\"" + ":" + "\"" + videoWidgetView.getCurrentPosition() + "\"" + "," + "\"pitch\"" + ":" + "\"" + String.format("%.1f", float_pitch) + "\"" + "," + "\"roll\"" + ":" + "\"" + String.format("%.1f", float_roll) + "\"" + "," + "\"yaw\"" + ":" + "\"" + String.format("%.1f", float_yaw) + "\"" + "}";
+//                gyro_data = gyro_data + "{\"TS\"" + ":" + "\"" + videoWidgetView.getCurrentPosition() + "\"" + "," + "\"date\"" + ":" + "\"" + currentTime + "\"" + "," + "\"pitch\"" + ":" + "\"" + String.format("%.1f", (pitch * RAD2DGR) - (firstPitch * RAD2DGR)) + "\"" + "," + "\"roll\"" + ":" + "\"" + String.format("%.1f", (roll * RAD2DGR) - (firstRoll * RAD2DGR)) + "\"" + "," + "\"yaw\"" + ":" + "\"" + String.format("%.1f", (yaw * RAD2DGR) - (firstYaw * RAD2DGR)) + "\"" + "}";
+                gyro_data = gyro_data + ("\""+String.format("%d", videoWidgetView.getCurrentPosition()) + "\" : {pitch : "+String.format("%.1f", float_pitch)+", yaw : "+String.format("%.1f", float_yaw)+", roll : "+String.format("%.1f", float_roll)+"}");
 
-
-
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }

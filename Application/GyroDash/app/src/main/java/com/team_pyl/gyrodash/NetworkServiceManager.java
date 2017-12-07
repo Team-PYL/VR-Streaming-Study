@@ -16,7 +16,7 @@ import java.net.URL;
  */
 
 public class NetworkServiceManager {
-    private String SERVER_URL = "http://192.9.88.238:5000/data/create";
+    private String SERVER_URL = "http://192.168.10.3:5000/data/create";
 
     /* Connection */
     /*
