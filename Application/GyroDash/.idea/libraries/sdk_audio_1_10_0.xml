@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sdk-audio-1.10.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/f019499b609b1e8a59aad5d9df89cf51166b9adc/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/f019499b609b1e8a59aad5d9df89cf51166b9adc/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/redsnow/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.3.1_9563d7b1f0e4cdb1e702362f6e06ba6c63bfda14/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/redsnow/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/2.0.0-beta2/880d9e0997b2d1bfc98e0d121ced33ee5d04aac4/retrofit-2.0.0-beta2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="880d9e0997b2d1bfc98e0d121ced33ee5d04aac4">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.0-beta2_5d610f1bed990f9559199bcb59e98840056622aa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/redsnow/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-2.5.0_962a83dfac8eded299f8bc1e4d62e7ad72b89910/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8b2d71d3cd8f0c91e689099791509026bd0f019f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/redsnow/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/converter-gson/2.0.0-beta2/392c3d09e0f5e7087544093cc0cb23bb9c7af5fa/converter-gson-2.0.0-beta2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="392c3d09e0f5e7087544093cc0cb23bb9c7af5fa">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.0-beta2_49ff2b8baa92174ba442f18cfec21564ab9bc8db/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/redsnow/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.6.0_8978bcea2760d39b73a085b081b110b420c9d11d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b2d44483a503254902491edfa35ea31c346f43a">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_89f401a6d4a6c13ce06b4ab53224701cb1f001cd/classes.dex" />
+    </item>
+
+</items>

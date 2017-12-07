@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sdk-videowidget-1.10.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/13187037e2939dc44ca2029147c738cab9d06d6d/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/13187037e2939dc44ca2029147c738cab9d06d6d/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
