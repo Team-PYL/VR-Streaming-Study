@@ -1,14 +1,16 @@
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from collections import OrderedDict
 
 
 def drawingGraph(data, video_name):
-    print("drawing!1")
+    # print("drawing!1")
     ord_data_by_timestamp = OrderedDict()
     data_by_timestamp = data[video_name]
     arr_keys = list(data_by_timestamp.keys())
     arr_keys.sort(key=int, reverse=False)
-    print("drawing!2")
+    # print("drawing!2")
 
     for key in arr_keys:
         try:
@@ -17,14 +19,12 @@ def drawingGraph(data, video_name):
             print(data_by_timestamp[key]['yaw'])
             print(data_by_timestamp[key]['pitch'])
             print(data_by_timestamp[key]['roll'])
-            ord_data_by_timestamp[key] = float(data_by_timestamp[key]['yaw']) + float(
-                data_by_timestamp[key]['pitch']) + float(data_by_timestamp[key]['roll'])
+            ord_data_by_timestamp[key] = (float(data_by_timestamp[key]['yaw']) + float(
+                data_by_timestamp[key]['pitch']) + float(data_by_timestamp[key]['roll']))/3
         except:
             pass
 
-
-
-    print("drawing!3")
+    # print("drawing!3")
     arr_keys_int = []
     arr_data_int = []
     for key, value in ord_data_by_timestamp.items():
@@ -39,3 +39,9 @@ def drawingGraph(data, video_name):
     plt.grid(True)
     plt.show()
 
+def clearGraph():
+    plt.plot([], [])
+    plt.xlabel('')
+    plt.ylabel('')
+    plt.axis([0, 1, 0, 1])
+    plt.show()
