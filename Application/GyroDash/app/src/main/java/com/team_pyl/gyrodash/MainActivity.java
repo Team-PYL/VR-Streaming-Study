@@ -151,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         mGyroLis = new GyroscopeListener();
         mSensorManager.registerListener(mGyroLis, mGgyroSensor, SensorManager.SENSOR_DELAY_UI);
 
+//        networkServiceManager.clearData();
     }
 
     private void initWidgets() {
@@ -247,22 +248,23 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(TAGGYRO,"LAST  "+gyro_data);
 
                 try {
+<<<<<<< HEAD
 //                    JSONObject gyro_TS_dict = new JSONObject(gyro_data);
 //                    for (item : )
 
+=======
+>>>>>>> 30637e51c948d40258e7dba5f3c472210650d9b1
                     networkServiceManager.sendData(new JSONObject(gyro_data));
                 }catch (Exception e){
                     Log.w(TAGGYRO, "getting POST function error", e);
                 }
-                //데이터 초기화
-                CreateJson.writeFile(CreateJson.getFileName(), gyro_data);
+//                CreateJson.writeFile(CreateJson.getFileName(), gyro_data);
                 gyro_data = "";
 
-//                CreateJson.read("1511896959704.json");
-//            1511896959704.txt
-//            1511886866616.json
+                videoWidgetView.pauseVideo();
+                isPaused = !isPaused;
+                updateStatusText();
             }
-
         });
     }
 
@@ -284,7 +286,6 @@ public class MainActivity extends AppCompatActivity {
         savedInstanceState.putBoolean(STATE_IS_PAUSED, isPaused);
         super.onSaveInstanceState(savedInstanceState);
         Log.w(TAG, " onSaveInstanceState");
-
     }
 
     @Override
@@ -381,9 +382,23 @@ public class MainActivity extends AppCompatActivity {
                 // 어느정도의 sleep을 줘도 괜찮을것 같아서
                 String currentTime = new java.text.SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date(System.currentTimeMillis()));
 
+<<<<<<< HEAD
                 double float_pitch = (pitch * RAD2DGR) - (firstPitch * RAD2DGR);
                 double float_roll = (roll * RAD2DGR) - (firstRoll * RAD2DGR);
                 double float_yaw = (yaw * RAD2DGR) - (firstYaw * RAD2DGR);
+=======
+//                double float_pitch = (pitch * RAD2DGR) - (firstPitch * RAD2DGR);
+//                double float_roll = (roll * RAD2DGR) - (firstRoll * RAD2DGR);
+//                double float_yaw = (yaw * RAD2DGR) - (firstYaw * RAD2DGR);
+
+                double float_pitch = (pitch * RAD2DGR);
+                double float_roll = (roll * RAD2DGR);
+                double float_yaw = (yaw * RAD2DGR);
+
+                float_pitch = Math.round(float_pitch/10d)*10d;
+                float_roll = Math.round(float_roll/10d)*10d;
+                float_yaw = Math.round(float_yaw/10d)*10d;
+>>>>>>> 30637e51c948d40258e7dba5f3c472210650d9b1
 
                 Log.w(TAGGYRO, "[TimeStamp]: "+videoWidgetView.getCurrentPosition()
                         + "           [Date]: " + currentTime

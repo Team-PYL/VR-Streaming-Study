@@ -19,9 +19,15 @@ def createJSONData():
     t2 = Thread(target=graphDrawer.drawingGraph, args=(mean_data, "congo_2048"))
     t1.start()
     t2.start()
-    # getMeanOfDataPerTimeSlice(content, arr_keys, "congo_2048")
-    # graphDrawer.drawingGraph(mean_data, "congo_2048")
     return jsonify({"status": "success"})
+
+
+@app.route('/data/reload', methods=['POST'])
+def reloadCurrentData():
+    t2 = Thread(target=graphDrawer.clearGraph, args=())
+    t2.start()
+    return jsonify({"status": "reload success"})
+
 
 def getMeanOfDataPerTimeSlice(json_content, json_arrKeys, video_name):
     idx = 0
