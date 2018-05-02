@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+<<<<<<< HEAD
+=======
+        jar="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/git/Application/GyroDash/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="65751999f7d55231167f63a190dc96b5e24924b0">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/git/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_db4a5a2f03ee22e6e452dd00789491ef25abfdd4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+>>>>>>> 30637e51c948d40258e7dba5f3c472210650d9b1
+        jar="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8b2d71d3cd8f0c91e689099791509026bd0f019f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+<<<<<<< HEAD
+=======
+        jar="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/git/Application/GyroDash/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/git/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_5599dd6c5b14b339b245b8e524a0a703c40571b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+>>>>>>> 30637e51c948d40258e7dba5f3c472210650d9b1
+        jar="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b2d44483a503254902491edfa35ea31c346f43a">
+        <dex dex="/Users/redsnow/Desktop/eye/Gachon/2017Gachon2/졸업작품/github/Application/GyroDash/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_89f401a6d4a6c13ce06b4ab53224701cb1f001cd/classes.dex" />
+    </item>
+
+</items>
